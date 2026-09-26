@@ -1,0 +1,4093 @@
+<!-- Website updated -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MMU FoodHub | AI Phishing Awareness Campaign</title>
+
+<meta name="description"
+      content="MMU FoodHub Cyber Security Awareness Campaign focusing on AI-Assisted Phishing and Social Engineering.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --primary: #003b70;
+    --primary-dark: #061a2f;
+    --secondary: #0077b6;
+    --accent: #e63946;
+    --accent-dark: #c92f3b;
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+
+    --background: #f4f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #e2e8f0;
+
+    --shadow:
+        0 15px 40px rgba(0, 35, 80, 0.10);
+
+    --radius: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    background: rgba(6, 26, 47, 0.96);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 14px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ff5964;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: #dbeafe;
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5964;
+}
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 92vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(230,57,70,0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0,119,182,0.25),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #04182d,
+            #003b70
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+.hero-container {
+    position: relative;
+
+    max-width: 1200px;
+    width: 90%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(
+            2.8rem,
+            6vw,
+            5.2rem
+        );
+
+    line-height: 1.02;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ff5964;
+}
+
+.hero-description {
+    max-width: 680px;
+
+    color: #cbd5e1;
+
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding:
+        13px
+        25px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+
+    transform:
+        translateY(-3px);
+}
+
+.btn-outline {
+    border:
+        1px solid
+        rgba(255,255,255,0.4);
+
+    color: white;
+
+    background:
+        transparent;
+}
+
+.btn-outline:hover {
+    background: white;
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   SECURITY CARD
+========================================================= */
+
+.security-card {
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,0.25);
+
+    animation:
+        floating
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+.shield {
+    width: 110px;
+    height: 110px;
+
+    margin: auto;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(22,163,74,0.15);
+
+    font-size: 3.5rem;
+}
+
+.security-card h2 {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+.security-card p {
+    text-align: center;
+
+    color: #cbd5e1;
+
+    margin-top: 10px;
+}
+
+.security-status {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #4ade80;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-section {
+    margin-top: -50px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.stats-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.stat-card {
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.stat-number {
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    color:
+        var(--primary);
+}
+
+.stat-label {
+    color:
+        var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+    padding: 90px 6%;
+}
+
+.section-container {
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+.section-heading {
+    max-width: 750px;
+
+    margin:
+        0 auto
+        50px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   THREAT SECTION
+========================================================= */
+
+.comparison-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 25px;
+}
+
+.threat-card {
+    padding: 30px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    border-top:
+        5px solid
+        var(--primary);
+}
+
+.threat-card.ai {
+    border-top-color:
+        var(--accent);
+}
+
+.threat-card h3 {
+    font-size: 1.35rem;
+
+    margin-bottom: 15px;
+}
+
+.threat-card ul {
+    padding-left: 20px;
+}
+
+.threat-card li {
+    margin: 10px 0;
+}
+
+
+/* =========================================================
+   AI AMPLIFICATION
+========================================================= */
+
+.ai-flow {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.flow-card {
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    transition: 0.3s;
+}
+
+.flow-card:hover {
+    transform:
+        translateY(-7px);
+}
+
+.flow-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+}
+
+.flow-card h3 {
+    margin-bottom: 8px;
+}
+
+.flow-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   TARGETS
+========================================================= */
+
+.target-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.target-card {
+    padding: 25px 18px;
+
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        var(--shadow);
+
+    transition: 0.3s;
+}
+
+.target-card:hover {
+    transform:
+        translateY(-6px);
+}
+
+.target-icon {
+    font-size: 2.2rem;
+
+    margin-bottom: 12px;
+}
+
+.target-card h3 {
+    font-size: 1rem;
+}
+
+.target-card p {
+    margin-top: 8px;
+
+    color:
+        var(--muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   VULNERABILITIES
+========================================================= */
+
+.vulnerability-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.vulnerability-card {
+    padding: 25px;
+
+    background:
+        var(--card);
+
+    border-left:
+        4px solid
+        var(--accent);
+
+    border-radius:
+        10px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.vulnerability-card h3 {
+    margin-bottom: 10px;
+}
+
+.vulnerability-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   ATTACK LIFECYCLE
+========================================================= */
+
+.lifecycle {
+    position: relative;
+
+    max-width: 950px;
+
+    margin: auto;
+}
+
+.lifecycle-step {
+    display: grid;
+
+    grid-template-columns:
+        70px
+        1fr;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-weight: 900;
+
+    font-size: 1.1rem;
+}
+
+.step-content {
+    padding: 20px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.step-content h3 {
+    margin-bottom: 5px;
+}
+
+.ai-tag {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding:
+        4px 10px;
+
+    border-radius: 20px;
+
+    background:
+        #fee2e2;
+
+    color:
+        #991b1b;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.control-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.control-card {
+    padding: 30px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.control-card h3 {
+    margin-bottom: 15px;
+}
+
+.control-card ul {
+    padding-left: 20px;
+}
+
+.control-card li {
+    margin: 8px 0;
+
+    font-size: 0.9rem;
+}
+
+.control-icon {
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   RISK MATRIX
+========================================================= */
+
+.risk-table-wrapper {
+    overflow-x: auto;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.risk-table {
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+    min-width: 750px;
+}
+
+.risk-table th {
+    background:
+        var(--primary);
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+}
+
+.risk-table td {
+    padding: 14px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+.risk-high {
+    color:
+        var(--danger);
+
+    font-weight: 800;
+}
+
+.risk-medium {
+    color:
+        var(--warning);
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   IMPACTS
+========================================================= */
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.impact-card {
+    padding: 25px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.impact-card h3 {
+    margin-bottom: 8px;
+}
+
+.impact-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.stop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.stop-card {
+    padding: 30px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    transition: 0.3s;
+}
+
+.stop-card:hover {
+    transform:
+        translateY(-8px);
+}
+
+.stop-letter {
+    font-size: 3rem;
+
+    font-weight: 900;
+
+    color:
+        var(--accent);
+}
+
+.stop-card h3 {
+    margin-bottom: 10px;
+}
+
+.stop-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   TRAINING TABLE
+========================================================= */
+
+.training-table-wrapper {
+    overflow-x: auto;
+
+    margin-top: 40px;
+}
+
+.training-table {
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+    min-width: 700px;
+
+    background:
+        var(--card);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.training-table th {
+    padding: 15px;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    text-align: left;
+}
+
+.training-table td {
+    padding: 14px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+
+/* =========================================================
+   PHISHING DEMO
+========================================================= */
+
+.demo-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    overflow: hidden;
+}
+
+.email-header {
+    padding: 18px 25px;
+
+    background:
+        #eef2f7;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+.email-body {
+    padding: 30px;
+}
+
+.fake-link {
+    color:
+        #2563eb;
+
+    text-decoration:
+        underline;
+
+    cursor:
+        pointer;
+}
+
+.warning-box {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background:
+        #fff1f2;
+
+    border-left:
+        5px solid
+        var(--danger);
+
+    color:
+        #991b1b;
+
+    border-radius:
+        8px;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.quiz-question {
+    margin-bottom: 20px;
+}
+
+.quiz-option {
+    width: 100%;
+
+    padding: 14px;
+
+    margin:
+        7px 0;
+
+    text-align: left;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        8px;
+
+    background:
+        #f8fafc;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.quiz-option:hover {
+    background:
+        #eff6ff;
+
+    border-color:
+        var(--primary);
+}
+
+.quiz-result {
+    margin-top: 20px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-wrapper {
+    max-width: 950px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    background:
+        black;
+}
+
+.video-container {
+    position: relative;
+
+    padding-bottom:
+        56.25%;
+
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.source-card {
+    padding: 20px;
+
+    background:
+        var(--card);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.source-number {
+    color:
+        var(--accent);
+
+    font-weight: 900;
+}
+
+.source-card h3 {
+    font-size: 1rem;
+
+    margin:
+        5px 0;
+}
+
+.source-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.85rem;
+}
+
+.source-card a {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color:
+        var(--secondary);
+
+    font-weight: 700;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.team-card {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto
+        15px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        #dbeafe;
+
+    font-size: 1.7rem;
+}
+
+.team-card h3 {
+    font-size: 1rem;
+}
+
+.team-card p {
+    color:
+        var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding:
+        55px 6%;
+
+    background:
+        var(--primary-dark);
+
+    color:
+        #cbd5e1;
+
+    text-align:
+        center;
+}
+
+footer h2 {
+    color:
+        white;
+
+    margin-bottom:
+        10px;
+}
+
+footer strong {
+    color:
+        white;
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.7s,
+        transform 0.7s;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 1000px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .target-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .stop-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media(max-width: 750px) {
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 60px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        background:
+            var(--primary-dark);
+
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .comparison-grid,
+    .control-grid,
+    .impact-grid,
+    .sources-grid,
+    .vulnerability-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .ai-flow {
+        grid-template-columns:
+            1fr;
+    }
+
+    .target-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media(max-width: 500px) {
+
+    section {
+        padding:
+            65px 5%;
+    }
+
+    .stats-container,
+    .stop-grid,
+    .team-grid,
+    .target-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero h1 {
+        font-size:
+            2.7rem;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            MMU <span>FoodHub</span>
+        </a>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#threat">
+                    Threat
+                </a>
+            </li>
+
+            <li>
+                <a href="#targets">
+                    Targets
+                </a>
+            </li>
+
+            <li>
+                <a href="#lifecycle">
+                    Attack Lifecycle
+                </a>
+            </li>
+
+            <li>
+                <a href="#controls">
+                    Controls
+                </a>
+            </li>
+
+            <li>
+                <a href="#seta">
+                    SETA
+                </a>
+            </li>
+
+            <li>
+                <a href="#sources">
+                    Sources
+                </a>
+            </li>
+
+            <li>
+                <a href="#video">
+                    Video
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="reveal">
+
+            <div class="hero-badge">
+                🛡️ BDY6213 CYBER SECURITY
+            </div>
+
+            <h1>
+                Can You Spot
+                <span>AI Phishing?</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Generative AI is changing how cybercriminals
+                create convincing phishing and social engineering
+                attacks.
+
+                Learn how AI can make scams more personalised,
+                scalable, multilingual and difficult to identify —
+                and discover how you can protect yourself and
+                MMU FoodHub.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#quiz"
+                    class="btn btn-primary">
+
+                    Test Your Awareness →
+
+                </a>
+
+                <a
+                    href="#seta"
+                    class="btn btn-outline">
+
+                    Learn the S.T.O.P. Framework
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="security-card reveal">
+
+            <div class="shield">
+                🛡️
+            </div>
+
+            <h2>
+                Security Awareness
+            </h2>
+
+            <p>
+                Technology is only part of cybersecurity.
+                Your decisions matter too.
+            </p>
+
+            <div class="security-status">
+                ● AWARENESS ACTIVE
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================
+     KEY FACTS
+========================================================= -->
+
+<section class="stats-section">
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <div class="stat-number">
+                AI
+            </div>
+
+            <div class="stat-label">
+                Content Generation
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-number">
+                24/7
+            </div>
+
+            <div class="stat-label">
+                Attack Opportunities
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-number">
+                3+
+            </div>
+
+            <div class="stat-label">
+                Potential Languages
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-number">
+                1
+            </div>
+
+            <div class="stat-label">
+                Careful Decision
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     THREAT
+========================================================= -->
+
+<section id="threat">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Understanding the Threat
+            </h2>
+
+            <p>
+                AI-assisted phishing is not an entirely new
+                type of cyberattack. Instead, Generative AI
+                can make existing social engineering techniques
+                faster, more scalable and potentially more
+                convincing.
+            </p>
+
+        </div>
+
+
+        <div class="comparison-grid">
+
+            <div class="threat-card reveal">
+
+                <h3>
+                    📧 Traditional Phishing
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Generic messages
+                    </li>
+
+                    <li>
+                        Obvious spelling or grammar errors
+                    </li>
+
+                    <li>
+                        Limited personalisation
+                    </li>
+
+                    <li>
+                        Smaller-scale campaigns
+                    </li>
+
+                    <li>
+                        Easily recognisable warning signs
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="threat-card ai reveal">
+
+                <h3>
+                    🤖 AI-Assisted Phishing
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Personalised communication
+                    </li>
+
+                    <li>
+                        More natural language
+                    </li>
+
+                    <li>
+                        Multilingual content
+                    </li>
+
+                    <li>
+                        Rapid message generation
+                    </li>
+
+                    <li>
+                        Multiple variations of the same lure
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     HOW AI AMPLIFIES THE THREAT
+========================================================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                How Generative AI Amplifies Phishing
+            </h2>
+
+            <p>
+                Gen-AI can support different parts of a
+                social engineering campaign.
+            </p>
+
+        </div>
+
+
+        <div class="ai-flow">
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    ✍️
+                </div>
+
+                <h3>
+                    Generation
+                </h3>
+
+                <p>
+                    Produces natural-sounding messages
+                    and business-style communication.
+                </p>
+
+            </div>
+
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Personalisation
+                </h3>
+
+                <p>
+                    Helps adapt communication to a
+                    person's role, context or organisation.
+                </p>
+
+            </div>
+
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    Translation
+                </h3>
+
+                <p>
+                    Supports communication across
+                    different languages.
+                </p>
+
+            </div>
+
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Automation
+                </h3>
+
+                <p>
+                    Reduces the time required to prepare
+                    large numbers of messages.
+                </p>
+
+            </div>
+
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Scaling
+                </h3>
+
+                <p>
+                    Enables attackers to create many
+                    message variations.
+                </p>
+
+            </div>
+
+
+            <div class="flow-card reveal">
+
+                <div class="flow-icon">
+                    🎭
+                </div>
+
+                <h3>
+                    Impersonation Support
+                </h3>
+
+                <p>
+                    Can help imitate communication styles
+                    associated with trusted individuals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     TARGETS
+========================================================= -->
+
+<section id="targets">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Who Could Be Targeted?
+            </h2>
+
+            <p>
+                Different departments face different
+                phishing and social engineering risks.
+            </p>
+
+        </div>
+
+
+        <div class="target-grid">
+
+            <div class="target-card reveal">
+
+                <div class="target-icon">
+                    👨‍💼
+                </div>
+
+                <h3>
+                    Management
+                </h3>
+
+                <p>
+                    Executive impersonation and
+                    urgent business requests.
+                </p>
+
+            </div>
+
+
+            <div class="target-card reveal">
+
+                <div class="target-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Finance
+                </h3>
+
+                <p>
+                    Payment requests, invoices
+                    and financial information.
+                </p>
+
+            </div>
+
+
+            <div class="target-card reveal">
+
+                <div class="target-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Human Resources
+                </h3>
+
+                <p>
+                    Employee records and
+                    recruitment information.
+                </p>
+
+            </div>
+
+
+            <div class="target-card reveal">
+
+                <div class="target-icon">
+                    💻
+                </div>
+
+                <h3>
+                    IT
+                </h3>
+
+                <p>
+                    Privileged accounts and
+                    administrative systems.
+                </p>
+
+            </div>
+
+
+            <div class="target-card reveal">
+
+                <div class="target-icon">
+                    🎧
+                </div>
+
+                <h3>
+                    Customer Service
+                </h3>
+
+                <p>
+                    Customer information and
+                    business correspondence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     VULNERABILITIES
+========================================================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Key Vulnerabilities
+            </h2>
+
+            <p>
+                AI-assisted phishing can exploit a combination
+                of human, technical and organisational weaknesses.
+            </p>
+
+        </div>
+
+
+        <div class="vulnerability-grid">
+
+            <div class="vulnerability-card reveal">
+
+                <h3>
+                    🧠 Human Vulnerabilities
+                </h3>
+
+                <p>
+                    Urgency, authority, familiarity,
+                    curiosity, lack of awareness and
+                    over-trust in professional-looking
+                    communication.
+                </p>
+
+            </div>
+
+
+            <div class="vulnerability-card reveal">
+
+                <h3>
+                    🔐 Technical Vulnerabilities
+                </h3>
+
+                <p>
+                    Password-only authentication,
+                    insufficient email filtering,
+                    weak URL protection and
+                    excessive account privileges.
+                </p>
+
+            </div>
+
+
+            <div class="vulnerability-card reveal">
+
+                <h3>
+                    🏢 Organisational Vulnerabilities
+                </h3>
+
+                <p>
+                    Weak verification procedures,
+                    limited security training,
+                    unclear reporting processes
+                    and insufficient Gen-AI policies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     ATTACK LIFECYCLE
+========================================================= -->
+
+<section id="lifecycle">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                AI-Assisted Phishing Lifecycle
+            </h2>
+
+            <p>
+                A simplified defensive model showing where
+                Generative AI may influence the threat process.
+            </p>
+
+        </div>
+
+
+        <div class="lifecycle">
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Information Gathering
+                    </h3>
+
+                    <p>
+                        Attackers may gather publicly available
+                        information about an organisation,
+                        departments and potential targets.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Target Selection
+                    </h3>
+
+                    <p>
+                        A target may be selected based on
+                        role, access level or expected authority.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        AI-Assisted Content Preparation
+                    </h3>
+
+                    <p>
+                        Generative AI may assist with language,
+                        personalisation, translation and
+                        message variations.
+                    </p>
+
+                    <span class="ai-tag">
+                        GEN-AI INVOLVEMENT
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Phishing Delivery
+                    </h3>
+
+                    <p>
+                        The deceptive communication may be
+                        delivered through email, SMS,
+                        messaging platforms or voice.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Victim Interaction
+                    </h3>
+
+                    <p>
+                        The victim may click a link,
+                        open an attachment, disclose
+                        information or respond to a request.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    06
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Account or Information Compromise
+                    </h3>
+
+                    <p>
+                        Stolen credentials or information
+                        may enable unauthorised access
+                        or further social engineering.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lifecycle-step reveal">
+
+                <div class="step-number">
+                    07
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Organisational Impact
+                    </h3>
+
+                    <p>
+                        Potential consequences include
+                        financial loss, data exposure,
+                        operational disruption and
+                        reputational damage.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     CONTROLS
+========================================================= -->
+
+<section id="controls">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Detection, Prevention & Risk Treatment
+            </h2>
+
+            <p>
+                Effective protection requires a layered
+                combination of technical, human and
+                organisational controls.
+            </p>
+
+        </div>
+
+
+        <div class="control-grid">
+
+
+            <div class="control-card reveal">
+
+                <div class="control-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Technical Controls
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Multi-factor authentication
+                    </li>
+
+                    <li>
+                        Phishing-resistant authentication
+                    </li>
+
+                    <li>
+                        Email filtering
+                    </li>
+
+                    <li>
+                        Malicious URL scanning
+                    </li>
+
+                    <li>
+                        Endpoint protection
+                    </li>
+
+                    <li>
+                        Identity monitoring
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="control-card reveal">
+
+                <div class="control-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Human Controls
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Security awareness training
+                    </li>
+
+                    <li>
+                        Independent verification
+                    </li>
+
+                    <li>
+                        Phishing simulations
+                    </li>
+
+                    <li>
+                        Suspicious message reporting
+                    </li>
+
+                    <li>
+                        Secure password practices
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="control-card reveal">
+
+                <div class="control-icon">
+                    🏢
+                </div>
+
+                <h3>
+                    Organisational Controls
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Gen-AI acceptable-use policy
+                    </li>
+
+                    <li>
+                        Payment verification
+                    </li>
+
+                    <li>
+                        Least privilege
+                    </li>
+
+                    <li>
+                        Incident response plan
+                    </li>
+
+                    <li>
+                        Regular policy review
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     RISK REGISTER
+========================================================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Cybersecurity Risk Register
+            </h2>
+
+            <p>
+                Example risk treatment priorities for
+                MMU FoodHub.
+            </p>
+
+        </div>
+
+
+        <div class="risk-table-wrapper reveal">
+
+            <table class="risk-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Risk</th>
+                        <th>Likelihood</th>
+                        <th>Impact</th>
+                        <th>Risk Level</th>
+                        <th>Treatment</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            AI-assisted phishing
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td class="risk-high">
+                            HIGH
+                        </td>
+
+                        <td>
+                            Email security + SETA
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Credential theft
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td class="risk-high">
+                            HIGH
+                        </td>
+
+                        <td>
+                            MFA + awareness
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Executive impersonation
+                        </td>
+
+                        <td>
+                            Medium
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td class="risk-high">
+                            HIGH
+                        </td>
+
+                        <td>
+                            Independent verification
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Financial fraud
+                        </td>
+
+                        <td>
+                            Medium
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td class="risk-high">
+                            HIGH
+                        </td>
+
+                        <td>
+                            Dual approval
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Data exposure
+                        </td>
+
+                        <td>
+                            Medium
+                        </td>
+
+                        <td>
+                            High
+                        </td>
+
+                        <td class="risk-high">
+                            HIGH
+                        </td>
+
+                        <td>
+                            Least privilege + DLP
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Delayed reporting
+                        </td>
+
+                        <td>
+                            Medium
+                        </td>
+
+                        <td>
+                            Medium
+                        </td>
+
+                        <td class="risk-medium">
+                            MEDIUM
+                        </td>
+
+                        <td>
+                            Reporting procedure
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     IMPACTS
+========================================================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Potential Impacts
+            </h2>
+
+            <p>
+                A successful phishing incident can affect
+                more than a single employee.
+            </p>
+
+        </div>
+
+
+        <div class="impact-grid">
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    💰 Financial
+                </h3>
+
+                <p>
+                    Fraudulent transactions, payment diversion,
+                    account takeover and incident recovery costs.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    ⚙️ Operational
+                </h3>
+
+                <p>
+                    System access disruption, investigation,
+                    account suspension and delayed business processes.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    🔒 Privacy
+                </h3>
+
+                <p>
+                    Exposure of customer, employee or
+                    business information.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    ⚖️ Legal & Compliance
+                </h3>
+
+                <p>
+                    Potential regulatory, contractual and
+                    data protection consequences.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    📢 Reputation
+                </h3>
+
+                <p>
+                    Loss of customer trust, partner confidence
+                    and organisational credibility.
+                </p>
+
+            </div>
+
+
+            <div class="impact-card reveal">
+
+                <h3>
+                    🌏 Societal
+                </h3>
+
+                <p>
+                    Increased exposure to scams and reduced
+                    trust in digital communication.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     SETA
+========================================================= -->
+
+<section id="seta">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                THINK BEFORE YOU CLICK
+            </h2>
+
+            <p>
+                MMU FoodHub's proposed Security Education,
+                Training and Awareness programme.
+            </p>
+
+        </div>
+
+
+        <div class="stop-grid">
+
+
+            <div class="stop-card reveal">
+
+                <div class="stop-letter">
+                    S
+                </div>
+
+                <h3>
+                    STOP
+                </h3>
+
+                <p>
+                    Do not react immediately to urgent,
+                    unexpected or suspicious requests.
+                </p>
+
+            </div>
+
+
+            <div class="stop-card reveal">
+
+                <div class="stop-letter">
+                    T
+                </div>
+
+                <h3>
+                    CHECK
+                </h3>
+
+                <p>
+                    Check the sender, URL, message context
+                    and unexpected attachments.
+                </p>
+
+            </div>
+
+
+            <div class="stop-card reveal">
+
+                <div class="stop-letter">
+                    O
+                </div>
+
+                <h3>
+                    VERIFY
+                </h3>
+
+                <p>
+                    Independently confirm important requests
+                    through an official communication channel.
+                </p>
+
+            </div>
+
+
+            <div class="stop-card reveal">
+
+                <div class="stop-letter">
+                    P
+                </div>
+
+                <h3>
+                    REPORT
+                </h3>
+
+                <p>
+                    Report suspicious communication to
+                    your organisation's IT or security team.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="training-table-wrapper reveal">
+
+            <table class="training-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Month</th>
+                        <th>Activity</th>
+                        <th>Target</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Month 1</td>
+                        <td>Cybersecurity Awareness Session</td>
+                        <td>All Employees</td>
+                    </tr>
+
+                    <tr>
+                        <td>Month 2</td>
+                        <td>AI-Assisted Phishing Workshop</td>
+                        <td>All Employees</td>
+                    </tr>
+
+                    <tr>
+                        <td>Month 3</td>
+                        <td>Controlled Phishing Simulation</td>
+                        <td>Selected Departments</td>
+                    </tr>
+
+                    <tr>
+                        <td>Month 4</td>
+                        <td>Verification Training</td>
+                        <td>Finance / HR / Management</td>
+                    </tr>
+
+                    <tr>
+                        <td>Month 5</td>
+                        <td>Responsible Gen-AI Training</td>
+                        <td>All Employees</td>
+                    </tr>
+
+                    <tr>
+                        <td>Month 6</td>
+                        <td>Refresher Assessment</td>
+                        <td>All Employees</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     PHISHING DEMONSTRATION
+========================================================= -->
+
+<section>
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Interactive Phishing Example
+            </h2>
+
+            <p>
+                Can you identify the warning signs?
+                This is a fictional awareness example.
+            </p>
+
+        </div>
+
+
+        <div class="demo-box reveal">
+
+            <div class="email-header">
+
+                <strong>
+                    From:
+                </strong>
+
+                FoodHub Finance
+                &lt;finance@foodhub-payment-secure.example&gt;
+
+                <br>
+
+                <strong>
+                    Subject:
+                </strong>
+
+                URGENT: Supplier Payment Verification Required
+
+            </div>
+
+
+            <div class="email-body">
+
+                <p>
+                    Dear Finance Team,
+                </p>
+
+                <p>
+                    We have detected an issue with your
+                    supplier payment account.
+                    Immediate verification is required.
+                </p>
+
+                <p>
+                    Please review your account using the
+                    following link:
+                </p>
+
+                <p>
+                    <span
+                        class="fake-link"
+                        onclick="showWarning()">
+
+                        Verify Payment Account
+
+                    </span>
+                </p>
+
+                <p>
+                    Failure to complete verification today
+                    may result in payment delays.
+                </p>
+
+                <p>
+                    Regards,<br>
+                    FoodHub Finance Department
+                </p>
+
+
+                <div
+                    id="warningBox"
+                    class="warning-box">
+
+                    <strong>
+                        ⚠️ Warning Signs Detected
+                    </strong>
+
+                    <br><br>
+
+                    • Artificial urgency<br>
+                    • Unexpected financial request<br>
+                    • Suspicious sender domain<br>
+                    • Request to click a link<br>
+                    • Pressure to act immediately
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     QUIZ
+========================================================= -->
+
+<section id="quiz">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Test Your Cyber Awareness
+            </h2>
+
+            <p>
+                A quick interactive awareness test.
+            </p>
+
+        </div>
+
+
+        <div class="quiz reveal">
+
+            <div class="quiz-question">
+
+                <h3>
+                    You receive an urgent email asking
+                    you to verify your company account.
+                    What should you do first?
+                </h3>
+
+            </div>
+
+
+            <button
+                class="quiz-option"
+                onclick="checkAnswer(false)">
+
+                A. Click the link immediately
+
+            </button>
+
+
+            <button
+                class="quiz-option"
+                onclick="checkAnswer(true)">
+
+                B. Stop and independently verify the request
+
+            </button>
+
+
+            <button
+                class="quiz-option"
+                onclick="checkAnswer(false)">
+
+                C. Reply to the email asking whether it is legitimate
+
+            </button>
+
+
+            <button
+                class="quiz-option"
+                onclick="checkAnswer(false)">
+
+                D. Forward your password to IT
+
+            </button>
+
+
+            <div
+                id="quizResult"
+                class="quiz-result">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     20 SOURCES
+========================================================= -->
+
+<section id="sources">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Research & Cybersecurity Sources
+            </h2>
+
+            <p>
+                Selected credible sources supporting the
+                threat analysis, controls and awareness campaign.
+            </p>
+
+        </div>
+
+
+        <div class="sources-grid">
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    01
+                </span>
+
+                <h3>
+                    FBI — AI-Enabled Phishing
+                </h3>
+
+                <p>
+                    FBI warning on the increasing use of
+                    artificial intelligence in phishing
+                    and social engineering.
+                </p>
+
+                <a
+                    href="https://www.fbi.gov/news/stories/fbi-warns-of-increasing-threat-of-cyber-criminals-utilizing-artificial-intelligence"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    02
+                </span>
+
+                <h3>
+                    Microsoft Digital Defense Report
+                </h3>
+
+                <p>
+                    Industry research on evolving cyber
+                    threats and AI-assisted attacks.
+                </p>
+
+                <a
+                    href="https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    03
+                </span>
+
+                <h3>
+                    Microsoft Threat Intelligence
+                </h3>
+
+                <p>
+                    Research into AI-enhanced phishing
+                    and social engineering activity.
+                </p>
+
+                <a
+                    href="https://www.microsoft.com/en-us/security/security-insider"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    04
+                </span>
+
+                <h3>
+                    Google Threat Intelligence
+                </h3>
+
+                <p>
+                    Research into how threat actors
+                    incorporate AI into cyber operations.
+                </p>
+
+                <a
+                    href="https://cloud.google.com/security/resources"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    05
+                </span>
+
+                <h3>
+                    Verizon DBIR
+                </h3>
+
+                <p>
+                    Annual research on data breaches
+                    and the human element in cybersecurity.
+                </p>
+
+                <a
+                    href="https://www.verizon.com/business/resources/reports/dbir/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    06
+                </span>
+
+                <h3>
+                    IBM Cost of a Data Breach
+                </h3>
+
+                <p>
+                    Research on financial and organisational
+                    consequences of data breaches.
+                </p>
+
+                <a
+                    href="https://www.ibm.com/reports/data-breach"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    07
+                </span>
+
+                <h3>
+                    CISA — MFA
+                </h3>
+
+                <p>
+                    Guidance on using multifactor authentication
+                    to protect accounts.
+                </p>
+
+                <a
+                    href="https://www.cisa.gov/topics/cybersecurity-best-practices"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    08
+                </span>
+
+                <h3>
+                    CISA — Phishing-Resistant MFA
+                </h3>
+
+                <p>
+                    Guidance on stronger authentication
+                    approaches including phishing-resistant methods.
+                </p>
+
+                <a
+                    href="https://www.cisa.gov/resources-tools/resources/implementing-phishing-resistant-mfa"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    09
+                </span>
+
+                <h3>
+                    ENISA Threat Landscape
+                </h3>
+
+                <p>
+                    European cybersecurity threat intelligence
+                    covering phishing and emerging technologies.
+                </p>
+
+                <a
+                    href="https://www.enisa.europa.eu/topics/cyber-threats"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    10
+                </span>
+
+                <h3>
+                    SANS Institute
+                </h3>
+
+                <p>
+                    Practitioner-focused cybersecurity awareness
+                    and social engineering research.
+                </p>
+
+                <a
+                    href="https://www.sans.org/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    11
+                </span>
+
+                <h3>
+                    INTERPOL
+                </h3>
+
+                <p>
+                    International information on social engineering,
+                    financial fraud and cybercrime.
+                </p>
+
+                <a
+                    href="https://www.interpol.int/en/Crimes/Financial-crime"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    12
+                </span>
+
+                <h3>
+                    FTC — Phishing
+                </h3>
+
+                <p>
+                    Consumer guidance on identifying and
+                    responding to phishing scams.
+                </p>
+
+                <a
+                    href="https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    13
+                </span>
+
+                <h3>
+                    FTC — Artificial Intelligence
+                </h3>
+
+                <p>
+                    Information about AI-related fraud,
+                    impersonation and consumer protection.
+                </p>
+
+                <a
+                    href="https://www.ftc.gov/artificial-intelligence"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    14
+                </span>
+
+                <h3>
+                    Malaysia PDPC
+                </h3>
+
+                <p>
+                    Information on Malaysia's personal
+                    data protection framework.
+                </p>
+
+                <a
+                    href="https://www.pdp.gov.my/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    15
+                </span>
+
+                <h3>
+                    NACSA Malaysia
+                </h3>
+
+                <p>
+                    Malaysian national cybersecurity information
+                    and Cyber Security Act resources.
+                </p>
+
+                <a
+                    href="https://www.nacsa.gov.my/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    16
+                </span>
+
+                <h3>
+                    NIST Cybersecurity Framework
+                </h3>
+
+                <p>
+                    Cybersecurity risk management guidance
+                    for organisations.
+                </p>
+
+                <a
+                    href="https://www.nist.gov/cyberframework"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    17
+                </span>
+
+                <h3>
+                    NIST Phishing Guidance
+                </h3>
+
+                <p>
+                    Research and guidance related to
+                    phishing-resistant authentication.
+                </p>
+
+                <a
+                    href="https://www.nist.gov/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    18
+                </span>
+
+                <h3>
+                    Australian Cyber Security Centre
+                </h3>
+
+                <p>
+                    Cybersecurity guidance for phishing,
+                    scams and secure online behaviour.
+                </p>
+
+                <a
+                    href="https://www.cyber.gov.au/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    19
+                </span>
+
+                <h3>
+                    UK NCSC
+                </h3>
+
+                <p>
+                    Guidance on phishing, authentication
+                    and organisational cybersecurity.
+                </p>
+
+                <a
+                    href="https://www.ncsc.gov.uk/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+
+            <div class="source-card reveal">
+
+                <span class="source-number">
+                    20
+                </span>
+
+                <h3>
+                    Google Safety Centre
+                </h3>
+
+                <p>
+                    Guidance on online safety, scams,
+                    account security and digital protection.
+                </p>
+
+                <a
+                    href="https://safety.google/"
+                    target="_blank">
+
+                    Visit Source →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     VIDEO
+========================================================= -->
+
+<section id="video">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Campaign Showcase Video
+            </h2>
+
+            <p>
+                Watch our approximately five-minute
+                Cyber Security Awareness Campaign.
+            </p>
+
+        </div>
+
+
+        <div class="video-wrapper reveal">
+
+            <div class="video-container">
+
+                <!--
+                    REPLACE YOUR_YOUTUBE_ID
+                    WITH YOUR ACTUAL YOUTUBE VIDEO ID
+
+                    Example:
+                    https://www.youtube.com/watch?v=ABC123
+
+                    becomes:
+
+                    https://www.youtube.com/embed/ABC123
+                -->
+
+                <iframe
+                    src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID"
+                    title="MMU FoodHub AI Phishing Awareness Campaign"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     TEAM
+========================================================= -->
+
+<section id="team">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Team & Production Credits
+            </h2>
+
+            <p>
+                MMU FoodHub Sdn. Bhd.
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <div class="team-card reveal">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <h3>
+                    Student Name
+                </h3>
+
+                <p>
+                    Project Leader / Researcher
+                </p>
+
+            </div>
+
+
+            <div class="team-card reveal">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <h3>
+                    Student Name
+                </h3>
+
+                <p>
+                    Scriptwriter / Presenter
+                </p>
+
+            </div>
+
+
+            <div class="team-card reveal">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <h3>
+                    Student Name
+                </h3>
+
+                <p>
+                    Video Editor / Designer
+                </p>
+
+            </div>
+
+
+            <div class="team-card reveal">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <h3>
+                    Student Name
+                </h3>
+
+                <p>
+                    Web Developer / Researcher
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <h2>
+        THINK BEFORE YOU CLICK
+    </h2>
+
+    <p>
+        <strong>
+            STOP. CHECK. VERIFY. REPORT.
+        </strong>
+    </p>
+
+    <br>
+
+    <p>
+        BDY6213 Cyber Security · Semester 2620
+    </p>
+
+    <p>
+        MMU FoodHub Sdn. Bhd.
+    </p>
+
+    <br>
+
+    <p>
+        This website is an educational cybersecurity
+        awareness campaign developed for academic purposes.
+    </p>
+
+</footer>
+
+
+<!-- ========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU AFTER CLICK
+========================================================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("show");
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   PHISHING DEMO
+========================================================= */
+
+function showWarning() {
+
+    const warning =
+        document.getElementById("warningBox");
+
+    warning.style.display = "block";
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function checkAnswer(correct) {
+
+    const result =
+        document.getElementById("quizResult");
+
+    if (correct) {
+
+        result.innerHTML =
+            "✅ Correct! Stop and independently verify the request before taking action.";
+
+        result.style.color =
+            "#16a34a";
+
+    }
+
+    else {
+
+        result.innerHTML =
+            "❌ Not quite. Do not immediately click, reply or provide credentials. Stop and verify the request.";
+
+        result.style.color =
+            "#dc2626";
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("active");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(
+    element =>
+        observer.observe(element)
+);
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav-links a"
+    );
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        let current = "";
+
+        sections.forEach(
+            section => {
+
+                const sectionTop =
+                    section.offsetTop - 120;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            }
+        );
+
+        navLinks.forEach(
+            link => {
+
+                link.style.color = "";
+
+                if (
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ) {
+
+                    link.style.color =
+                        "#ff5964";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
